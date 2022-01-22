@@ -1,0 +1,31 @@
+{
+  "name": "aia-assesment",
+  "version": "0.0.1",
+  "description": "assesment-fullstack-aia",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/galangsw/aia-assessment.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "galangsw",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/galangsw/aia-assessment/issues"
+  },
+  "homepage": "https://github.com/galangsw/aia-assessment#readme",
+  "dependencies": {
+    "axios": "^0.25.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "mongoose": "^6.1.7",
+    "nodemon": "^2.0.15",
+    "requests": "^0.3.0"
+  }
+}
