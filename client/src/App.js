@@ -1,11 +1,12 @@
 import React from "react";
+import Pages from "./pages/index";
 
-const App = () => {
+function App (){
     return(
 
-        <div>
-            <h1>App</h1>
-        </div>
+        <Pages>
+
+        </Pages>
     )
 }
 

@@ -10,7 +10,7 @@ app.use(cors());
 
 app.use(express.json())
 
-app.get('/', feed)
+app.get('/feed', feed)
 
 
 const PORT = process.env.PORT || 4000
