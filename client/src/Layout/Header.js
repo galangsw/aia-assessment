@@ -2,7 +2,6 @@ import React from 'react';
 import { Navbar, Container,  Nav, } from 'react-bootstrap';
 import { Link, useLocation } from 'react-router-dom';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const Header = () => {
@@ -14,10 +13,7 @@ const Header = () => {
                 <Container>
                     <Nav>
                         <Link className='nav-link' to="/" replace={pathname === '/'}>
-                            Testing React
-                        </Link>
-                        <Link className='nav-link' to="/Search" replace={pathname === '/'}>
-                            Search
+                            AIA-Assesment
                         </Link>
                     </Nav>
 

@@ -7,7 +7,7 @@ import Footer from './Footer';
 
 const globalStyle = () => css`
   body {
-    transition-duration: 0.3s;
+    transition-duration: 0.1s;
     transition-timing-function: ease;
     transition-property: border, background, color;
   }
