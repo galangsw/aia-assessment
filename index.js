@@ -1,5 +1,4 @@
 import express  from "express";
-import  mongoose  from "mongoose";
 import cors from "cors";
 import feed from "./routes/feed.js"
 import search from "./routes/search.js"
