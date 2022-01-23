@@ -35,3 +35,7 @@ body {
     max-height: 1325px;
     display: grid;
 }
+
+form{
+    margin-bottom: 20px;
+}

@@ -1,28 +1,31 @@
 import React from 'react';
-import { Navbar, Container } from 'react-bootstrap';
+import { Navbar, Container,  Nav, } from 'react-bootstrap';
+import { Link, useLocation } from 'react-router-dom';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const Header = () => {
-  
+    const { pathname } = useLocation();
+
     return (
         <>
-        <Navbar bg="dark" variant="dark">
-        <Container>
-          <Navbar.Brand href="#home">
-            <img
-              alt=""
-              src="/logo512.png"
-              width="30"
-              height="30"
-              className="d-inline-block align-top"
-            />{' '}
-          React Bootstrap
-          </Navbar.Brand>
-        </Container>
-      </Navbar>
-      </>
+            <Navbar bg="dark" variant="dark">
+                <Container>
+                    <Nav>
+                        <Link className='nav-link' to="/" replace={pathname === '/'}>
+                            Testing React
+                        </Link>
+                        <Link className='nav-link' to="/Search" replace={pathname === '/'}>
+                            Search
+                        </Link>
+                    </Nav>
+
+
+                </Container>
+            </Navbar>
+        </>
     );
-  };
-  
-  export default Header;
+};
+
+export default Header;

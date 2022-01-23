@@ -1,11 +1,13 @@
 import React from "react";
-import Feed from "./FeedList/index";
-import Header from "./Layout/Header.js";
+import AppRouter from "./Routes/index.js";
+import AppLayout from "./Layout/AppLayout.js";
 function App (){
     return(
         <div>
-        <Header/>
-        <Feed/>
+            <AppLayout>
+              <AppRouter />
+            </AppLayout>
+        
         </div>
     )
 }

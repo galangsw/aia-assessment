@@ -11,8 +11,8 @@ app.use(cors());
 
 app.use(express.json())
 
-app.get('/feed', feed)
-app.get('/search/:text/:perPage/:page', search)
+app.get('/api', feed)
+app.get('/api/:text/:perPage/:page', search)
 
 const PORT = process.env.PORT || 4000
 app.listen(PORT, console.log(`listen on port ${PORT}`))
