@@ -1,12 +1,12 @@
 import React from "react";
-import Pages from "./pages/index";
-
+import Feed from "./FeedList/index";
+import Header from "./Layout/Header.js";
 function App (){
     return(
-
-        <Pages>
-
-        </Pages>
+        <div>
+        <Header/>
+        <Feed/>
+        </div>
     )
 }
 
