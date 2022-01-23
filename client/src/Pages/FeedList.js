@@ -6,26 +6,29 @@ import 'react-lazy-load-image-component/src/effects/blur.css';
 // import "../style.css"
 // import 'bulma/css/bulma.min.css';
 
-function FeedList ()  {
+function FeedList() {
 
 
 
     const [feeds, setFeed] = useState([]);
-    const [dataValue, setDataValue] = useState('');
+    const [text, setText] = useState('')
 
 
     //useEffect hook
-    useEffect(() => {
-
-        //panggil method "fetchData"
-        fectData();
-        
-
-    }, []);
-    const fectData = async (e) => {
+    const fecthData = async () => {
         //fetching
-        const response = await axios.get('http://localhost:4000/api/')
-          
+        var api ;
+        if (text === "" ){
+            api = "http://localhost:4000/api"
+            
+        }else{
+            
+            api = "http://localhost:4000/api/"+text+"/30/2'"
+
+        }
+        const response = await axios.get(api)
+        console.log(response);
+
         //get response data
         const data = await response.data.images;
         console.log(data);
@@ -37,12 +40,28 @@ function FeedList ()  {
     }
 
 
- 
+    
+    useEffect(() => {
 
-      
-    function handleSubmit(e) {
-        setDataValue(e.target.value);
-      }
+        //panggil method "fetchData"
+        fecthData();
+
+
+    }, []);
+
+
+
+
+    const handleSubmit =  (event) => {
+        event.preventDefault();
+        
+
+        fecthData();
+
+    }
+
+
+
 
     return (
 
@@ -50,27 +69,30 @@ function FeedList ()  {
 
         <div className='container'>
             <h1>Feed</h1>
-            
-            <form onSubmit={handleSubmit} >
-            <input name="text" className="form-control" value={dataValue} onChange={e => setDataValue(e.target.value)} placeholder='Search ...' />
 
+            <form onSubmit={handleSubmit} >
+                <input name="text" className="form-control"
+                    value={text }
+                    onChange={e => setText(e.target.value)} placeholder='Search ...' />
+                    <input type="submit" />
             </form>
+            
             <div className='lightbox'>
                 <div className="row">
-                {feeds.map(d => (<div key={d.owner} className='col-lg-4' >
-                <LazyLoadImage
-                    src={d.image}
-                    alt="Table Full of Spices"
-                    className="w-100 mb-2 mb-md-4 shadow-1-strong rounded"
-                    effect='blur'
-                />
+                    {feeds.map(d => (<div  className='col-lg-3' >
+                        <LazyLoadImage
+                            src={d.image}
+                            alt=""
+                            className="w-100 mb-md-2 shadow-1-strong rounded"
+                            effect='blur'
+                        />
+
+                    </div>
+                    ))}
 
                 </div>
-            ))}
-            
-        </div>
-        </div>
-        
+            </div>
+
         </div >
     );
 };
